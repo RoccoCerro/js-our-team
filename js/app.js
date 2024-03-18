@@ -34,9 +34,9 @@
 //     foto: "barbara-ramos-graphic-designer.jpg",
 // };
 
-const bodyDomElement = document.querySelector("body")
-const ulDinamicDomElement = document.createElement("ul")
-bodyDomElement.append(ulDinamicDomElement);
+const imgDomElement = document.querySelectorAll(".img-card");
+const h5DomElement = document.querySelectorAll("h5");
+const pDomElement = document.querySelectorAll("p");
 
 const users =  [
     {
@@ -74,11 +74,12 @@ const users =  [
 for (let i = 0; i < users.length; i++){
     userCorrent = users[i];
     console.log(userCorrent.nome,userCorrent.ruolo,userCorrent.foto)
-    ulDinamicDomElement.innerHTML += `
-        <ul>
-            <li>Nome: ${userCorrent.nome}</li>
-            <li>Ruolo: ${userCorrent.ruolo}</li>
-            <li><img src="./img/${userCorrent.foto}"></img></li>
-        </ul>
-    `
+
+    userCorrentFoto = userCorrent.foto;
+    userCorrentName = userCorrent.nome;
+    userCorrentWork = userCorrent.ruolo;
+
+    imgDomElement[i].innerHTML = `<img src="./img/${userCorrentFoto}">`;
+    h5DomElement[i].innerText = userCorrentName;
+    pDomElement[i].innerText = userCorrentWork;
 };
