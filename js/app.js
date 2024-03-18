@@ -78,7 +78,7 @@ for (let i = 0; i < users.length; i++){
         <ul>
             <li>Nome: ${userCorrent.nome}</li>
             <li>Ruolo: ${userCorrent.ruolo}</li>
-            <li>Foto: ${userCorrent.foto}</li>
+            <li><img src="./img/${userCorrent.foto}"></img></li>
         </ul>
     `
 };
